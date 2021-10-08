@@ -1,0 +1,296 @@
+.description {
+  margin-top: 62px;
+  @include flex($justify: center, $align: center, $direction: column);
+  border-top: $borderLine;
+  @include tablet {
+    margin-top: 100px;
+  }
+    @include desktop {
+      @include grid ($align: stretch, $justify: flex-start,);
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, auto);
+      }
+
+
+  &__cover-intro {
+    @include wh($w: calc(100% - 40px));
+    margin-top: 45px;
+    box-sizing: border-box;
+    @include tablet {
+      margin-top: 100px;
+  }
+  @include desktop {
+    border-right: $borderLine;
+    margin-top: 0;
+    padding: 45px 50px;
+    @include wh($w: 100%);
+  }
+  }
+  &__intro-title {
+    @include font($height: 27px, $align: left);
+    color: $mainColor;
+    margin: 0;
+    display: inline;
+    @include tablet {
+      @include font($size: 30px, $height: 42px, $align: left);
+    }
+  }
+
+  &__intro-text {
+    @include font($height: 27px, $weight: 300, $align: left);
+    color: $mainColor;
+    margin: 0;
+    display: inline;
+    @include tablet {
+      @include font($size: 30px, $height: 42px, $weight: 300, $align: left);
+    }
+  }
+  &__compare{
+    @include wh( $w: 100%);
+    @include tablet {
+      @include flex ($justify: center, $align: baseline,);
+      height: 505px;
+    }
+    @include desktop {
+      height: auto;
+    }
+  }
+  &__pluses {
+    border-top: $borderLine;
+    width: 100%;
+    margin-top: 18px;
+    @include tablet {
+      margin-top: 45px;
+      border-right: $borderLine;
+      @include wh( $h: 100%);
+  }
+  @include desktop {
+    margin-top: 0;
+    border-top: none;
+  }
+
+    &-title {
+      @include font(
+        $size: 22px,
+        $height: 22px,
+        $weight: 400,
+        $align: left,
+        $spacing: 2px
+      );
+      margin: 21px auto 0 20px;
+      color: $mainColor;
+      @include tablet {
+        @include font(
+          $size: 30px,
+          $height: 37px,
+          $weight: 400,
+          $align: left,
+          $spacing: 2px
+        );
+        margin: 40px auto 0 50px;
+    }
+    }
+
+    &-texts {
+      @include forList();
+      margin-left: 20px;
+      color: $mainColor;
+      @include font($height: 20px, $weight: 300, $align: left);
+      margin: 34px auto 0 20px;
+      @include tablet {
+        @include font(
+          $size: 22px,
+          $height: 32px,
+          $weight: 300,
+          $align: left,
+        );
+        margin: 50px auto 0 50px;
+      }
+    }
+
+    &-text {
+      margin-top: 6px;
+    }
+  }
+  &__minus {
+    border-top: $borderLine;
+    width: 100%;
+    margin-top: 18px;
+    @include desktop {
+      margin-top: 0;
+      border-top: none;
+    }
+
+    &-title {
+      @include font(
+        $size: 22px,
+        $height: 22px,
+        $weight: 400,
+        $align: left,
+        $spacing: 2px
+      );
+      margin: 21px auto 0 20px;
+      color: $mainColor;
+      @include tablet {
+        @include font(
+          $size: 30px,
+          $height: 37px,
+          $weight: 400,
+          $align: left,
+          $spacing: 2px
+        );
+        margin: 40px auto 0 50px;
+    }
+    }
+
+    &-texts {
+      @include forList();
+      margin-left: 20px;
+      color: $mainColor;
+      @include font($height: 20px, $weight: 300, $align: left);
+      margin: 34px auto 0 20px;
+      @include tablet {
+      @include font(
+        $size: 22px,
+        $height: 32px,
+        $weight: 300,
+        $align: left,
+      );
+      margin: 50px auto 0 50px;
+    }
+  }
+
+    &-text {
+      margin-top: 6px;
+    }
+  }
+  &__gallery {
+    border-top: $borderLine;
+    border-bottom: $borderLine;
+    width: 100%;
+    @include flex($justify: center, $align: center, $direction: column);
+    margin-top: 20px;
+    @include tablet {
+      margin-top: 0;
+    }
+    &-foto {
+      @include wh($w: calc(100% - 40px));
+      margin-top: 20px;
+      @include tablet {
+        margin-top: 35px;
+      }
+    }
+    &-cover{
+        @include flex($justify: space-between, $align: center,);
+        width: 100%;
+
+    }
+    &-title {
+      @include font($size: 26px, $height: 26px, $align: left);
+      color: $mainColor;
+      margin-left: 20px;
+      @include tablet {
+        @include font($size: 46px, $height: 46px, $align: left);
+      }
+    }
+        &-swap{
+            margin-right: 10px;
+            cursor: $cursorP;
+                &_left{
+                    margin-right: 16px;
+                    &:hover{
+                      opacity: 0.5;
+                    }
+                }
+                &_right:hover{
+                  opacity: 0.5;
+                }
+        }
+  }
+
+  &__whole{
+    @include desktop {
+      @include wh($w: 100%,  $h:100%);
+      border: $borderLine;
+      border-right: none;
+    }
+  }
+
+  &__mesages{
+    @include wh($w: 100%,  $h:100%);
+    @include mobile {
+      display: none;
+    }
+    &-title{
+      @include font($size: 46px, $height: 46px, $align: left);
+      margin: 40px 0 0 20px;
+      color: $mainColor;
+    }
+  }
+
+  
+  &__magazine{
+    margin-top: 20px;
+    padding: 20px 20px 0;
+    position: relative;
+    min-height: 286px;
+    @include wh($w: 100%);
+    box-sizing: border-box;
+    @include tablet {
+      @include wh($w: 100%,  $h:499px);
+    }
+    @include desktop {
+      margin-top: 0;
+      border-top: 0;
+      border-left: $borderLine;
+    }
+
+    &-title {
+        @include font($height: 27px, $align: left);
+        color: $mainColor;
+        margin: 0;
+        display: inline;
+        @include tablet {
+          @include font($size: 30px, $height: 42px, $align: left);
+        }
+      }
+    
+      &-text {
+        @include font($height: 27px, $weight: 300, $align: left);
+        color: $mainColor;
+        display: inline;
+        margin: 0;
+        @include tablet {
+          @include font($size: 30px, $height: 42px, $weight: 300, $align: left);
+        }
+      }
+      &-button{
+          @include wh ($w: 88px, $h: 42px, $r:50%,);
+          @include font ($size: 19px, $height: 28px,);
+          @include position ($b:20px, $r:20px);
+          background-color: $backGroundColor;
+          color: $mainColor;
+          border: $borderLine;
+          cursor: $cursorP;
+          padding: 10px 0 0;
+          text-decoration: none;
+          &:hover{
+            background-color: $mainColor;
+            color: $backGroundColor;
+          }
+      }
+      &-swap{
+        @include minwh ($mw:38px,);
+        @include position ($b:20px, $l:20px);
+        @include flex($justify: space-between, $align: center,);
+      }
+        &-circle{
+        @include wh ($w: 12px, $h: 12px, $r:50%,);
+        border: $borderLine;
+        cursor: $cursorP;
+            &_pick{
+                background-color: $mainColor;
+            }
+        }
+  }
+}

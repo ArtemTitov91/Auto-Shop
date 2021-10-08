@@ -1,0 +1,34 @@
+.popup {
+  @include wh($h: 70px);
+  @include flex($justify: space-between, $align: center);
+  @include position($position: absolute, $t: 0, $l: 0, $b: auto, $r: auto);
+  background-color: $backGroundColor;
+  opacity: 0;
+  visibility: hidden;
+  &_opened {
+    opacity: 1;
+    // transition: visibility 0.5s, opacity 0.5s linear;
+    visibility: initial;
+  }
+  &__links {
+    @include flex($justify: space-between, $align: center);
+    list-style: none;
+    padding: 0;
+    @include wh($w: 155px);
+    margin-left: 20px;
+  }
+  &__close {
+    background-image: url(../../../img/close.svg);
+    background-position: center;
+    background-size: cover;
+    background-color: transparent;
+    @include wh($w: 26px, $h: 26px);
+    border: none;
+    padding: 0;
+    margin-right: 26px;
+    cursor: $cursorP;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}

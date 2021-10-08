@@ -1,0 +1,88 @@
+.footer {
+  border-top: $borderLine;
+  @include tablet {
+    @include flex ($align: flex-start, $justify: space-between,);
+    }
+
+  &__title {
+    @include font($size: 26px, $height: 26px, $align: left);
+    color: $mainColor;
+    margin: 21px 0 0 20px;
+    @include tablet {
+      margin: 50px 0 0 20px;
+      @include font($size: 46px, $height: 46px, $align: left);
+      }
+  }
+  &__text {
+    @include font($size: 14px, $height: 14px, $align: left);
+    color: $mainColor;
+    margin: 14px 0 0 20px;
+    @include tablet {
+      @include font($size: 19px, $height: 28px, $align: left);
+      }
+  }
+  &__subs {
+    @include grid($justify: stretch, $align: stretch);
+    @include wh($w: 280px, $h: 64px);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin: auto;
+    @include tablet {
+      @include wh($w: 340px, $h: 64px);
+      margin: 64px 0 81px 20px;
+      }
+  }
+  &__list {
+    background-color: $backGroundColor;
+    border: $borderLine;
+    color: $mainColor;
+    grid-column-start: span 2;
+    cursor: $cursorP;
+    @include font($size: 9px, $height: 18px, $align: left, $spacing: 1px);
+    &:last-of-type {
+      grid-column-start: span 3;
+    }
+    &::placeholder {
+      @include font($size: 9px, $height: 18px, $align: left, $spacing: 1px);
+      color: $mainColor;
+    }
+  }
+  &__submit {
+    background-color: $mainColor;
+    border: $borderLine;
+    color: $backGroundColor;
+    @include font($size: 10px, $height: 13px, $spacing: 1px);
+    @include wh($w: 100%, $h: 32px);
+    cursor: $cursorP;
+    &:hover {
+      background-color: $mainColor;
+      color: $backGroundColor;
+    }
+  }
+  &__logos{
+    @include tablet {
+      @include flex ($align: flex-end, $justify: space-between, $direction: column);
+      @include wh($w: 50%, $h: 349px);
+      }
+      @include desktop{
+        border-left: $borderLine;
+      }
+  }
+  &__logo {
+    @include wh($w: 280px, $h: 58px);
+    margin: 120px 20px 0;
+    @include tablet {
+      @include wh($w: 184px, $h: 38px);
+      margin: 51px 50px 0;
+      }
+  }
+  &__caption {
+    @include font($size: 13px, $height: 13px, $align: left, $spacing: 1px);
+    color: $mainColor;
+    margin: 20px 0 20px 32px;
+    @include tablet {
+      @include wh($w: 184px, $h: 38px);
+      margin: 0px 20px 50px 0;
+      }
+  }
+}
