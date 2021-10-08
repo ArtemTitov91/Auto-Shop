@@ -14,7 +14,7 @@
   height: 70px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   flex-direction: row;
   position: relative;
 }
@@ -23,14 +23,7 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  width: 155px;
-  height: auto;
   position: absolute;
-  position: absolute;
-  top: 27px;
-  left: 30px;
-  bottom: auto;
-  right: auto;
 }
 @media (max-width: 1023px) {
   .header__links {
@@ -51,6 +44,7 @@
   list-style: none;
   cursor: pointer;
   margin-left: 20px;
+  transition: linear 0.3s;
 }
 .header__link:hover {
   opacity: 0.5;
@@ -220,6 +214,7 @@
   margin: 62px auto 0;
   cursor: pointer;
   text-decoration: none;
+  transition: linear 0.3s;
 }
 .intro__button:hover {
   background-color: #E1FD2C;
@@ -534,12 +529,26 @@
 .description__gallery-swap {
   margin-right: 10px;
   cursor: pointer;
+  background-position: center;
+  background-size: cover;
+  background-color: #191D2C;
+  border: none;
+  display: inline-block;
+  transition: linear 0.3s;
 }
 .description__gallery-swap_left {
   margin-right: 16px;
+  background-image: url(../../../img/arrowLeft.svg);
+  width: 42px;
+  height: 34px;
 }
 .description__gallery-swap_left:hover {
   opacity: 0.5;
+}
+.description__gallery-swap_right {
+  background-image: url(../../../img/arrowRight.svg);
+  width: 42px;
+  height: 34px;
 }
 .description__gallery-swap_right:hover {
   opacity: 0.5;
@@ -645,7 +654,7 @@
   height: 42px;
   border-radius: 50%;
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 19px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 28px;
@@ -660,12 +669,28 @@
   color: #E1FD2C;
   border: 1px solid #E1FD2C;
   cursor: pointer;
-  padding: 10px 0 0;
+  padding: 15px 0 0;
   text-decoration: none;
+  transition: linear 0.3s;
 }
 .description__magazine-button:hover {
   background-color: #E1FD2C;
   color: #191D2C;
+}
+@media (min-width: 768px) {
+  .description__magazine-button {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: center;
+    width: 110px;
+    height: 52px;
+    border-radius: 50%;
+    padding: 20px 0 0;
+  }
 }
 .description__magazine-swap {
   min-width: 38px;
@@ -847,7 +872,7 @@
   letter-spacing: 1px;
   text-align: left;
   color: #E1FD2C;
-  margin: 20px 0 20px 32px;
+  margin: 20px 0 20px 20px;
 }
 @media (min-width: 768px) {
   .footer__caption {
