@@ -36,9 +36,9 @@ for (let anchor of anchors) {
 //swap foto in gallary
 
 const fotos = [
-  "./img/Rectangle1.svg",
-  "./img/Rectangle2.svg",
-  "./img/Rectangle3.svg",
+  "./img/Rectangle1.jpg",
+  "./img/Rectangle2.jpg",
+  "./img/Rectangle3.jpg",
 ];
 const rArrow = document.querySelector(".description__gallery-swap_right");
 const lArrow = document.querySelector(".description__gallery-swap_left");

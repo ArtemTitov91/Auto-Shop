@@ -1,13 +1,12 @@
 .header{
   @include wh ( $h: 70px,);
-  @include flex ($justify: center, $align: center,);
+  @include flex ($justify: start, $align: center,);
   position: relative;
+
 
   &__links{
     @include flex ($justify: space-between, $align: center,);
-    @include wh ($w:155px,);
     position: absolute;
-    @include position($position: absolute, $t: 27px, $l: 30px, $b: auto, $r: auto);
     @include mobile{
       display: none;
     }
@@ -21,6 +20,7 @@
     list-style: none;
     cursor: $cursorP;
     margin-left: 20px;
+    transition: linear 0.3s;
 &:hover{
         opacity: 0.5;
     }

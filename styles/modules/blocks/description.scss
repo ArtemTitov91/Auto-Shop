@@ -196,14 +196,27 @@
         &-swap{
             margin-right: 10px;
             cursor: $cursorP;
+            background-position: center;
+            background-size: cover;
+            background-color: $backGroundColor;
+            border: none;
+            display: inline-block;
+            transition: linear 0.3s;
                 &_left{
                     margin-right: 16px;
+                    background-image: url(../../../img/arrowLeft.svg);
+                    @include wh($w: 42px, $h: 34px);
                     &:hover{
                       opacity: 0.5;
                     }
                 }
+                &_right{
+                  background-image: url(../../../img/arrowRight.svg);
+                  @include wh($w: 42px, $h: 34px);
+                }
                 &_right:hover{
                   opacity: 0.5;
+                  
                 }
         }
   }
@@ -266,17 +279,23 @@
       }
       &-button{
           @include wh ($w: 88px, $h: 42px, $r:50%,);
-          @include font ($size: 19px, $height: 28px,);
+          @include font ($size: 14px, $height: 28px,);
           @include position ($b:20px, $r:20px);
           background-color: $backGroundColor;
           color: $mainColor;
           border: $borderLine;
           cursor: $cursorP;
-          padding: 10px 0 0;
+          padding: 15px 0 0;
           text-decoration: none;
+          transition: linear 0.3s;
           &:hover{
             background-color: $mainColor;
             color: $backGroundColor;
+          }
+          @include tablet {
+            @include font ($size: 19px, $height: 28px,);
+            @include wh ($w: 110px, $h: 52px, $r:50%,);
+            padding: 20px 0 0;
           }
       }
       &-swap{

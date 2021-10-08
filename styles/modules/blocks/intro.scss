@@ -63,6 +63,7 @@
         margin: 62px auto 0;
         cursor: $cursorP;
         text-decoration: none;
+        transition: linear 0.3s;
         &:hover{
             background-color: $mainColor;
             color: $backGroundColor;
