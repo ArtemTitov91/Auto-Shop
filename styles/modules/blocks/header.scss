@@ -1,0 +1,52 @@
+.header{
+  @include wh ( $h: 70px,);
+  @include flex ($justify: center, $align: center,);
+  position: relative;
+
+  &__links{
+    @include flex ($justify: space-between, $align: center,);
+    @include wh ($w:155px,);
+    position: absolute;
+    @include position($position: absolute, $t: 27px, $l: 30px, $b: auto, $r: auto);
+    @include mobile{
+      display: none;
+    }
+}
+
+&__link{
+    @include font($size: 12px, $height: 16px, $spacing: 1px,);
+    color: $mainColor;
+    text-decoration: none;
+    padding: 0;
+    list-style: none;
+    cursor: $cursorP;
+    margin-left: 20px;
+&:hover{
+        opacity: 0.5;
+    }
+}
+
+&__logo{
+  @include wh ($w: 100px, $h: 20px,);
+  margin: auto;
+  @include tablet {
+    @include wh ($w: 184px, $h: 38px,);
+  }
+}
+&__menu{
+  @include position($t: 27px, $r: 27px,);
+  cursor: $cursorP;
+  @include wh ( $w: 20px, $h: 20px,);
+  background-image: url(../../../img/header_menu.svg);
+  background-position: center;
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  &:hover{
+    opacity: 0.5;
+}
+  @include  desktop {
+    display: none;
+  }
+}
+}
