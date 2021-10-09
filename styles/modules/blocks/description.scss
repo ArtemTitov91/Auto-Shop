@@ -9,21 +9,24 @@
       @include grid ($align: stretch, $justify: flex-start,);
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(3, auto);
+      margin-top: 150px;
       }
 
 
   &__cover-intro {
     @include wh($w: calc(100% - 40px));
-    margin-top: 45px;
+    margin-top: 15px;
     box-sizing: border-box;
     @include tablet {
-      margin-top: 100px;
-  }
+      @include wh($w: calc(100% - 100px));
+      min-height: 330px;
+      margin: 40px 0 0;
+    }
   @include desktop {
     border-right: $borderLine;
     margin-top: 0;
     padding: 45px 50px;
-    @include wh($w: 100%);
+      @include minwh($mw: 100%, $mh: 507px,);
   }
   }
   &__intro-title {
@@ -44,25 +47,26 @@
     @include tablet {
       @include font($size: 30px, $height: 42px, $weight: 300, $align: left);
     }
+
   }
   &__compare{
     @include wh( $w: 100%);
     @include tablet {
       @include flex ($justify: center, $align: baseline,);
-      height: 505px;
+      min-height: 545px;
     }
     @include desktop {
-      height: auto;
+      min-height: 505px;
     }
   }
   &__pluses {
     border-top: $borderLine;
     width: 100%;
-    margin-top: 18px;
+    margin-top: 24px;
     @include tablet {
       margin-top: 45px;
       border-right: $borderLine;
-      @include wh( $h: 100%);
+      min-height: 505px;
   }
   @include desktop {
     margin-top: 0;
@@ -96,7 +100,7 @@
       margin-left: 20px;
       color: $mainColor;
       @include font($height: 20px, $weight: 300, $align: left);
-      margin: 34px auto 0 20px;
+      margin: 40px auto 0 20px;
       @include tablet {
         @include font(
           $size: 22px,
@@ -148,7 +152,7 @@
       margin-left: 20px;
       color: $mainColor;
       @include font($height: 20px, $weight: 300, $align: left);
-      margin: 34px auto 0 20px;
+      margin: 40px auto 0 20px;
       @include tablet {
       @include font(
         $size: 22px,
@@ -168,33 +172,52 @@
     border-top: $borderLine;
     border-bottom: $borderLine;
     width: 100%;
-    @include flex($justify: center, $align: center, $direction: column);
+    @include flex($justify: space-around, $align: center, $direction: column);
     margin-top: 20px;
     @include tablet {
       margin-top: 0;
+      min-height: 690px;
     }
+    @include desktop {
+      @include flex($justify: space-between, $align: center, $direction: column);
+      
+  }
     &-foto {
       @include wh($w: calc(100% - 40px));
       margin-top: 20px;
       @include tablet {
-        margin-top: 35px;
+        margin-top: 0;
+        @include wh($w: calc(100% - 68px));
+        height: 510px;
       }
+      @include desktop {
+        @include wh($w: 100%, $h: 540px,);
+        margin-top: 0;
+    }
     }
     &-cover{
         @include flex($justify: space-between, $align: center,);
         width: 100%;
+        @include desktop {
+          margin-bottom: 35px;
+      }
 
     }
     &-title {
       @include font($size: 26px, $height: 26px, $align: left);
       color: $mainColor;
+      margin: 46px 0 20px 20px;
       margin-left: 20px;
       @include tablet {
         @include font($size: 46px, $height: 46px, $align: left);
+        margin: 0 50px 25px;
+      }
+      @include desktop{
+        margin-left: 50px;
       }
     }
         &-swap{
-            margin-right: 10px;
+          margin: 13px 10px 0;
             cursor: $cursorP;
             background-position: center;
             background-size: cover;
@@ -202,17 +225,29 @@
             border: none;
             display: inline-block;
             transition: linear 0.3s;
+            @include tablet{
+              margin: 0 25px 10px;
+            }
+            @include desktop{
+              margin-right: 25px;
+            }
                 &_left{
-                    margin-right: 16px;
-                    background-image: url(../../../img/arrowLeft.svg);
-                    @include wh($w: 42px, $h: 34px);
+                    margin-right: 0;
+                    background-image: url(../img/arrowLeft.svg);
+                    @include wh($w: 24px, $h: 20px);
+                    @include tablet{
+                      @include wh($w: 42px, $h: 34px);
+                    }
                     &:hover{
                       opacity: 0.5;
                     }
                 }
                 &_right{
-                  background-image: url(../../../img/arrowRight.svg);
-                  @include wh($w: 42px, $h: 34px);
+                  background-image: url(../img/arrowRight.svg);
+                  @include wh($w: 24px, $h: 20px);
+                  @include tablet{
+                    @include wh($w: 42px, $h: 34px);
+                  }
                 }
                 &_right:hover{
                   opacity: 0.5;
@@ -238,24 +273,30 @@
       @include font($size: 46px, $height: 46px, $align: left);
       margin: 40px 0 0 20px;
       color: $mainColor;
+      @include desktop{
+        margin-left: 50px;
+        margin-top: 45px;
+      }
     }
   }
 
   
   &__magazine{
-    margin-top: 20px;
     padding: 20px 20px 0;
     position: relative;
     min-height: 286px;
     @include wh($w: 100%);
     box-sizing: border-box;
     @include tablet {
-      @include wh($w: 100%,  $h:499px);
+      @include wh($w: 100%);
+      min-height: 500px;
+      padding: 55px 50px;
     }
     @include desktop {
       margin-top: 0;
       border-top: 0;
       border-left: $borderLine;
+      padding: 45px 50px;
     }
 
     &-title {
@@ -285,9 +326,10 @@
           color: $mainColor;
           border: $borderLine;
           cursor: $cursorP;
-          padding: 15px 0 0;
+          padding: 5px 0 0;
           text-decoration: none;
           transition: linear 0.3s;
+          box-sizing: border-box;
           &:hover{
             background-color: $mainColor;
             color: $backGroundColor;
@@ -295,13 +337,17 @@
           @include tablet {
             @include font ($size: 19px, $height: 28px,);
             @include wh ($w: 110px, $h: 52px, $r:50%,);
-            padding: 20px 0 0;
+            @include position ($b:50px, $r:50px);
+            padding: 10px 0 0;
           }
       }
       &-swap{
         @include minwh ($mw:38px,);
         @include position ($b:20px, $l:20px);
         @include flex($justify: space-between, $align: center,);
+        @include tablet{
+          @include position ($b:50px, $l:50px);
+        }
       }
         &-circle{
         @include wh ($w: 12px, $h: 12px, $r:50%,);
