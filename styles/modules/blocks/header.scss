@@ -2,11 +2,13 @@
   @include wh ( $h: 70px,);
   @include flex ($justify: start, $align: center,);
   position: relative;
+  border-bottom: $borderLine;
 
 
   &__links{
     @include flex ($justify: space-between, $align: center,);
     position: absolute;
+    margin-left: 30px;
     @include mobile{
       display: none;
     }
@@ -37,11 +39,14 @@
   @include position($t: 27px, $r: 27px,);
   cursor: $cursorP;
   @include wh ( $w: 20px, $h: 20px,);
-  background-image: url(../../../img/header_menu.svg);
+  background-image: url(../img/header_menu.svg);
   background-position: center;
   background-size: cover;
   background-color: transparent;
   border: none;
+  @include tablet{
+    @include position($t: 25px, $r: 35px,);
+  }
   &:hover{
     opacity: 0.5;
 }
